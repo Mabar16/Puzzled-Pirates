@@ -17,11 +17,15 @@ class MapKitViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
+    let annotation = MKPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
         print("OHIO GOZAIMASUUUUU")
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.9, longitude: -122.6)
+        mapView.addAnnotation(annotation)
+        
         
         
     }
@@ -48,7 +52,7 @@ class MapKitViewController: UIViewController {
     }
     
     func checkLocationAuthorization() {
-        print(CLLocationManager.authorizationStatus().rawValue)
+        
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
@@ -80,6 +84,13 @@ extension MapKitViewController: CLLocationManagerDelegate {
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
         mapView.setRegion(region, animated: true)
+        // MARK: - printing distances
+        print("PLAYER LATITUDE: \(location.coordinate.latitude)")
+        print("PLAYER LONGTITUDE: \(location.coordinate.longitude)")
+        print("POINT LATITUDE: \(annotation.coordinate.latitude)")
+        print("POINT LONGTITUDE: \(annotation.coordinate.longitude)")
+        let converted = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+        print("BIG DICK DISTANCE?: \(location.distance(from: converted))")
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
