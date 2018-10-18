@@ -13,6 +13,7 @@
 		28F46E07216F4537001FC7AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E05216F4537001FC7AF /* Main.storyboard */; };
 		28F46E09216F453B001FC7AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E08216F453B001FC7AF /* Assets.xcassets */; };
 		28F46E0C216F453B001FC7AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E0A216F453B001FC7AF /* LaunchScreen.storyboard */; };
+		E359EC5E21788E060030AFB8 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC5D21788E060030AFB8 /* MapKitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		28F46E08216F453B001FC7AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28F46E0B216F453B001FC7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28F46E0D216F453B001FC7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E359EC5D21788E060030AFB8 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		28F46DFE216F4537001FC7AF /* Puzzled Pirates */ = {
 			isa = PBXGroup;
 			children = (
+				E359EC5D21788E060030AFB8 /* MapKitViewController.swift */,
 				28F46DFF216F4537001FC7AF /* AppDelegate.swift */,
 				28F46E01216F4537001FC7AF /* FirstViewController.swift */,
 				28F46E03216F4537001FC7AF /* SecondViewController.swift */,
@@ -140,6 +143,7 @@
 			files = (
 				28F46E04216F4537001FC7AF /* SecondViewController.swift in Sources */,
 				28F46E00216F4537001FC7AF /* AppDelegate.swift in Sources */,
+				E359EC5E21788E060030AFB8 /* MapKitViewController.swift in Sources */,
 				28F46E02216F4537001FC7AF /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
