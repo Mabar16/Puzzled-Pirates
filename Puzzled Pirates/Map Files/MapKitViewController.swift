@@ -74,6 +74,14 @@ class MapKitViewController: UIViewController {
             
         }
     }
+    
+    public static func atPuzzleLocation() -> Bool {
+        let number = Int.random(in: 0 ..< 10)
+        if (number > 5){
+            return true
+        }
+        return false
+    }
 
     
 }

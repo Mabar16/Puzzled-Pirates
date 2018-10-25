@@ -13,12 +13,16 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var puzzleLabel: UILabel!
     @IBOutlet weak var puzzleImage: UIImageView!
     
+    var gameTimer: Timer!
     
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        puzzleLabel?.text = labelText()
+        gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(checkLocation), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     
     func showPuzzle() {
         puzzleLabel?.isHidden = !checkLocation()
@@ -32,8 +36,13 @@ class SecondViewController: UIViewController {
         }
     }
     
-    func checkLocation() -> Bool {
-        return false
+    @objc func checkLocation() -> Bool {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            self.puzzleLabel?.text = self.labelText()
+            print("Skrrate Potate")
+        }
+        return MapKitViewController.atPuzzleLocation()
+        
     }
 }
 

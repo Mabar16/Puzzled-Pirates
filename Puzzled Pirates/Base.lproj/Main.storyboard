@@ -56,7 +56,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board" translatesAutoresizingMaskIntoConstraints="NO" id="8ZE-a3-zIj">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saiba" translatesAutoresizingMaskIntoConstraints="NO" id="8ZE-a3-zIj">
                                 <rect key="frame" x="67" y="270" width="240" height="127"/>
                             </imageView>
                         </subviews>
@@ -151,6 +151,6 @@
     <resources>
         <image name="MapIcon" width="24" height="24"/>
         <image name="PuzzleIcon" width="24" height="24"/>
-        <image name="board" width="744" height="783"/>
+        <image name="saiba" width="594" height="483"/>
     </resources>
 </document>
