@@ -307,13 +307,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8654P7UHR6;
+				DEVELOPMENT_TEAM = XZR478GFSB;
 				INFOPLIST_FILE = "Puzzled Pirates/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "student.sdu.mabar16.Puzzled-Pirates";
+				PRODUCT_BUNDLE_IDENTIFIER = "sdu.iOS.Puzzled-Pirates";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -325,13 +325,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8654P7UHR6;
+				DEVELOPMENT_TEAM = XZR478GFSB;
 				INFOPLIST_FILE = "Puzzled Pirates/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "student.sdu.mabar16.Puzzled-Pirates";
+				PRODUCT_BUNDLE_IDENTIFIER = "sdu.iOS.Puzzled-Pirates";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -47,26 +47,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Puzzle" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="136.5" y="312" width="102" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noughts and Crosses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouZ-zT-p5T">
+                                <rect key="frame" x="16" y="77" width="342" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="qDE-Kr-E7d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board" translatesAutoresizingMaskIntoConstraints="NO" id="8ZE-a3-zIj">
+                                <rect key="frame" x="67" y="270" width="240" height="127"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="ouZ-zT-p5T" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="1tR-Al-5Uy"/>
+                            <constraint firstItem="ouZ-zT-p5T" firstAttribute="centerX" secondItem="8ZE-a3-zIj" secondAttribute="centerX" id="55y-nh-SBj"/>
+                            <constraint firstItem="8ZE-a3-zIj" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="ScP-qn-OkS"/>
+                            <constraint firstItem="8ZE-a3-zIj" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="67" id="Who-hY-uOl"/>
+                            <constraint firstItem="ouZ-zT-p5T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O1u-W8-tvY" secondAttribute="top" id="gY8-c6-3bN"/>
+                            <constraint firstItem="ouZ-zT-p5T" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="13" id="kcW-CJ-xGy"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="8ZE-a3-zIj" secondAttribute="trailing" constant="68" id="yZr-9I-QpL"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="8ZE-a3-zIj" secondAttribute="bottom" constant="221" id="z6H-sp-Wz2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Puzzle" image="PuzzleIcon" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="puzzleImage" destination="8ZE-a3-zIj" id="g5p-cK-T41"/>
+                        <outlet property="puzzleLabel" destination="ouZ-zT-p5T" id="gsL-8W-FAe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
         <!--Menu-->
         <scene sceneID="yba-Wv-Giz">
@@ -134,7 +149,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MapIcon" width="32" height="32"/>
-        <image name="PuzzleIcon" width="32" height="32"/>
+        <image name="MapIcon" width="24" height="24"/>
+        <image name="PuzzleIcon" width="24" height="24"/>
+        <image name="board" width="744" height="783"/>
     </resources>
 </document>
