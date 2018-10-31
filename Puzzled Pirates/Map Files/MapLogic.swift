@@ -15,10 +15,10 @@ class MapLogic {
     var point = MKMapPoint(x: 1.0, y: 1.0)
     let list = [MKMapPoint]()
     
-    let THRESHOLD_IN_METERS = 10.0
+    let THRESHOLD_IN_METERS = 15.0
     
-    private func checkIfWithinThreshold(onePoint: MKMapPoint, secondPoint: MKMapPoint)-> Bool{
-        if(onePoint.distance(to: secondPoint) <= THRESHOLD_IN_METERS){
+    public func checkIfWithinThreshold(onePoint: CLLocation, secondPoint: CLLocation)-> Bool{
+        if(onePoint.distance(from: secondPoint) <= THRESHOLD_IN_METERS){
             return true
         }
         return false

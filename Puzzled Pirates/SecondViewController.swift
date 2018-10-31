@@ -15,6 +15,9 @@ class SecondViewController: UIViewController {
     
     var gameTimer: Timer!
     
+    let MKVC = MapKitViewController()
+    
+    
     
         
     override func viewDidLoad() {
@@ -41,7 +44,7 @@ class SecondViewController: UIViewController {
             self.puzzleLabel?.text = self.labelText()
             print("Skrrate Potate")
         }
-        return MapKitViewController.atPuzzleLocation()
+        return MKVC.atPuzzleLocation()
         
     }
 }
