@@ -18,12 +18,15 @@ class OutsiderLogic
         return ("Error", ["I", "Suck"])
     }
     
-    func makeRounds() -> [String: [String]]{
-        let outsiderRounds =
-            ["Car": ["Cat", "Dog", "Bird"],
-             "White": ["Red","Yellow","Blue"] ]
+    public func gameTitle() -> String {
+        return "Which one does not belong?";
+    }
+    
+    func makeRounds2() -> [OutsiderRound]{
+        var outsiderRound = OutsiderRound.init(outsider: "Plane", matchingWords: ["Cat", "Dog", "Bird"]);
+        var outsiderRoundArray = [outsiderRound]
         
-        return outsiderRounds
+        return outsiderRoundArray
     }
     
     

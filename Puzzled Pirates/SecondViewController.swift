@@ -12,13 +12,21 @@ class SecondViewController: UIViewController {
 
     let outsiderGame = OutsiderLogic()
     
+    lazy var outsiderRoundArray = outsiderGame.makeRounds2()
+    
+    lazy var outsiderRound = outsiderRoundArray[0]
+    
     @IBOutlet weak var puzzleLabel: UILabel!
     @IBOutlet var uiButtons: [UIButton]!
     
-    @IBAction func buttonPressed(_ sender: Any) {
-        if !(sender as AnyObject).isHidden {
-            print("pressed")
-        }
+
+    @IBAction func buttonPressed(_ sender: UIButton) {
+            if !(sender as AnyObject).isHidden {
+                print("pressed")
+                if ((sender as UIButton).currentTitle == outsiderRound.outsider) {
+                    print("lol nice one, champ")
+                }
+            }
     }
     
     
@@ -47,20 +55,29 @@ class SecondViewController: UIViewController {
             button.isHidden = !atLoc
         }
         
-        let values = outsiderGame.getGame()
+        for (index, element) in uiButtons.enumerated() {
+            if (index < 3){
+                element.setTitle(outsiderRound.matchingWords[index], for: UIControl.State.normal)
+            } else {
+                element.setTitle(outsiderRound.outsider, for: UIControl.State.normal)
+            }
+        }
+        
+        /*
         for (index, element) in uiButtons.enumerated() {
             if (index < 3){
             element.setTitle(values.1[index], for: UIControl.State.normal)
             } else {
             element.setTitle(values.0, for: UIControl.State.normal)
             }
-        }
+        }*/
+
         
     }
     
     func labelText() -> String {
         if checkLocation() {
-            return "X's and O's"
+            return outsiderGame.gameTitle()
         } else {
             return "Please find the right location"
         }
