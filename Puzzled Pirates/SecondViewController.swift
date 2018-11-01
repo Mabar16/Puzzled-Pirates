@@ -24,6 +24,9 @@ class SecondViewController: UIViewController {
     
     var gameTimer: Timer!
     
+    let MKVC = MapKitViewController()
+    
+    
     
         
     override func viewDidLoad() {
@@ -70,7 +73,7 @@ class SecondViewController: UIViewController {
         }
         let atLoc = true; //MapKitViewController.atPuzzleLocation();
         showPuzzle(atLoc);
-        return atLoc;
+        return MKVC.atPuzzleLocation()
         
     }
 }

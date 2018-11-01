@@ -17,17 +17,23 @@ class MapKitViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
-    let annotation = MKPointAnnotation()
+    static let annotation = MKPointAnnotation()
+     let gameLogic = MapLogic()
+    static var playerLocationPoint = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
         print("OHIO GOZAIMASUUUUU")
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.9, longitude: -122.6)
-        mapView.addAnnotation(annotation)
+        MapKitViewController.annotation.coordinate = CLLocationCoordinate2D(latitude: 37.78583400, longitude: -122.40641700)
+        mapView.addAnnotation(MapKitViewController.annotation)
         
         
         
+    }
+    
+    static func setPlayerLocation(playerLocation : CLLocation) {
+        playerLocationPoint = playerLocation
     }
     
     func setupLocationManager() {
@@ -73,21 +79,21 @@ class MapKitViewController: UIViewController {
             
             
         }
+        
+
+        
     }
     
-    public static func atPuzzleLocation() -> Bool {
-        let number = Int.random(in: 0 ..< 10)
-        if (number > 5){
-            return true
-        }
-        return false
-    }
 
+    
+
+ 
     
 }
 
 extension MapKitViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         guard let location = locations.last else {return}
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
@@ -95,13 +101,29 @@ extension MapKitViewController: CLLocationManagerDelegate {
         // MARK: - printing distances
         print("PLAYER LATITUDE: \(location.coordinate.latitude)")
         print("PLAYER LONGTITUDE: \(location.coordinate.longitude)")
-        print("POINT LATITUDE: \(annotation.coordinate.latitude)")
-        print("POINT LONGTITUDE: \(annotation.coordinate.longitude)")
-        let converted = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+        print("POINT LATITUDE: \(MapKitViewController.annotation.coordinate.latitude)")
+        print("POINT LONGTITUDE: \(MapKitViewController.annotation.coordinate.longitude)")
+        let converted = CLLocation(latitude: MapKitViewController.annotation.coordinate.latitude, longitude: MapKitViewController.annotation.coordinate.longitude)
+        let convertedTwo = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         print("BIG DICK DISTANCE?: \(location.distance(from: converted))")
+        print(gameLogic.checkIfWithinThreshold(onePoint: convertedTwo, secondPoint: converted))
+        MapKitViewController.setPlayerLocation(playerLocation: location)
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
+    
+    func atPuzzleLocation() -> Bool {
+        
+        let converted = CLLocation(latitude: MapKitViewController.annotation.coordinate.latitude, longitude: MapKitViewController.annotation.coordinate.longitude)
+//        let convertedTwo = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        print("called")
+        print(gameLogic.checkIfWithinThreshold(onePoint: MapKitViewController.playerLocationPoint, secondPoint: converted))
+        print("PLAYER LAT: \(MapKitViewController.playerLocationPoint.coordinate.latitude) PLAYER LONG: \(MapKitViewController.playerLocationPoint.coordinate.longitude)")
+        print("POINT LAT: \(converted.coordinate.latitude) POINT LONG: \(converted.coordinate.longitude)")
+        
+        return gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: MapKitViewController.playerLocationPoint)
+    }
+    
 }
