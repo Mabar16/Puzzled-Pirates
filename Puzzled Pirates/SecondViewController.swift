@@ -71,9 +71,9 @@ class SecondViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now()){
             self.puzzleLabel?.text = self.labelText()
         }
-        let atLoc = true; //MapKitViewController.atPuzzleLocation();
+        let atLoc = true; MKVC.atPuzzleLocation()
         showPuzzle(atLoc);
-        return MKVC.atPuzzleLocation()
+        return atLoc;
         
     }
 }
