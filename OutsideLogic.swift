@@ -10,13 +10,7 @@ import Foundation
 
 class OutsiderLogic
 {
-    public func getGame() -> (String, [String]){
-        if let x = makeRounds()["Car"] {
-            return ("Car", x);
-        }
-        
-        return ("Error", ["I", "Suck"])
-    }
+
     
     public func gameTitle() -> String {
         return "Which one does not belong?";
