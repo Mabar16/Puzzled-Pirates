@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noughts and Crosses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouZ-zT-p5T">
-                                <rect key="frame" x="16" y="77" width="342" height="46"/>
+                                <rect key="frame" x="16" y="77" width="343" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="qDE-Kr-E7d"/>
                                 </constraints>
@@ -56,27 +56,55 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saiba" translatesAutoresizingMaskIntoConstraints="NO" id="8ZE-a3-zIj">
-                                <rect key="frame" x="67" y="270" width="240" height="127"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-Zo-4DU">
+                                <rect key="frame" x="97" y="283" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Pxv-bN-L9i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7m-l6-j55">
+                                <rect key="frame" x="232" y="353" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="a2r-be-NId"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4q-mF-81k">
+                                <rect key="frame" x="232" y="283" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="htQ-0u-MQP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-dP-hc1">
+                                <rect key="frame" x="97" y="353" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="wRU-0j-Msp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ouZ-zT-p5T" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="1tR-Al-5Uy"/>
-                            <constraint firstItem="ouZ-zT-p5T" firstAttribute="centerX" secondItem="8ZE-a3-zIj" secondAttribute="centerX" id="55y-nh-SBj"/>
-                            <constraint firstItem="8ZE-a3-zIj" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="ScP-qn-OkS"/>
-                            <constraint firstItem="8ZE-a3-zIj" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="67" id="Who-hY-uOl"/>
+                            <constraint firstItem="ouZ-zT-p5T" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="fuk-RO-HzO"/>
                             <constraint firstItem="ouZ-zT-p5T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O1u-W8-tvY" secondAttribute="top" id="gY8-c6-3bN"/>
                             <constraint firstItem="ouZ-zT-p5T" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="13" id="kcW-CJ-xGy"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="8ZE-a3-zIj" secondAttribute="trailing" constant="68" id="yZr-9I-QpL"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="8ZE-a3-zIj" secondAttribute="bottom" constant="221" id="z6H-sp-Wz2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Puzzle" image="PuzzleIcon" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="puzzleImage" destination="8ZE-a3-zIj" id="g5p-cK-T41"/>
                         <outlet property="puzzleLabel" destination="ouZ-zT-p5T" id="gsL-8W-FAe"/>
+                        <outletCollection property="uiButtons" destination="X4q-mF-81k" collectionClass="NSMutableArray" id="LlM-Eh-jcW"/>
+                        <outletCollection property="uiButtons" destination="o7m-l6-j55" collectionClass="NSMutableArray" id="Zaa-yg-xPL"/>
+                        <outletCollection property="uiButtons" destination="Gcb-Zo-4DU" collectionClass="NSMutableArray" id="MBg-gJ-D9m"/>
+                        <outletCollection property="uiButtons" destination="DdH-dP-hc1" collectionClass="NSMutableArray" id="XKw-hn-RL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -151,6 +179,5 @@
     <resources>
         <image name="MapIcon" width="24" height="24"/>
         <image name="PuzzleIcon" width="24" height="24"/>
-        <image name="saiba" width="594" height="483"/>
     </resources>
 </document>
