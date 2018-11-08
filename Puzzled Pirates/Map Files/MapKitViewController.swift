@@ -18,19 +18,16 @@ class MapKitViewController: UIViewController {
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
     static let annotation = MKPointAnnotation()
-     let gameLogic = MapLogic()
+    let gameLogic = MapLogic()
     static var playerLocationPoint = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
-        print("OHIO GOZAIMASUUUUU")
         MapKitViewController.annotation.coordinate = CLLocationCoordinate2D(latitude: 37.78583400, longitude: -122.40641700)
         mapView.addAnnotation(MapKitViewController.annotation)
-        
-        
-        
     }
+    
     
     static func setPlayerLocation(playerLocation : CLLocation) {
         playerLocationPoint = playerLocation
@@ -76,20 +73,10 @@ class MapKitViewController: UIViewController {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
             break
-            
-            
         }
-        
-
-        
     }
-    
-
-    
-
- 
-    
 }
+
 
 extension MapKitViewController: CLLocationManagerDelegate {
     
