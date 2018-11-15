@@ -17,15 +17,36 @@ class MapKitViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
-    static let annotation = MKPointAnnotation()
+
+    static var annotation = MKPointAnnotation()
+    var points : [MKPointAnnotation] = []
     let gameLogic = MapLogic()
     static var playerLocationPoint = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+
         MapKitViewController.annotation.coordinate = CLLocationCoordinate2D(latitude: 37.78583400, longitude: -122.40641700)
         mapView.addAnnotation(MapKitViewController.annotation)
+
+        print("OHIO GOZAIMASUUUUU")
+        //MapKitViewController.annotation.coordinate = CLLocationCoordinate2D(latitude: 37.78583400, longitude: -122.40641700)
+        //mapView.addAnnotation(MapKitViewController.annotation)
+        
+        let firstPoint = MKPointAnnotation()
+        let secondPoint = MKPointAnnotation()
+        let thirdPoint = MKPointAnnotation()
+    
+        firstPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
+        secondPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583401, longitude: -122.40641701)
+        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583402, longitude: -122.40641702)
+        
+        points.append(firstPoint)
+        points.append(secondPoint)
+        points.append(thirdPoint)
+        
+        MapKitViewController.annotation = points.removeFirst()
     }
     
     
@@ -52,6 +73,10 @@ class MapKitViewController: UIViewController {
         } else {
             // no allowed to locate
         }
+    }
+    
+    func nextPuzzle() {
+        MapKitViewController.annotation = points.removeFirst()
     }
     
     func checkLocationAuthorization() {
