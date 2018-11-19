@@ -17,6 +17,8 @@ class SecondViewController: UIViewController {
     
     lazy var outsiderRound = outsiderRoundArray?[0]
     
+    lazy var mkvc = MapKitViewController()
+    
     @IBOutlet weak var puzzleLabel: UILabel!
     @IBOutlet var uiButtons: [UIButton]!
     
@@ -27,8 +29,9 @@ class SecondViewController: UIViewController {
                 if ((sender as UIButton).currentTitle == outsiderRound?.outsider) {
                     print("lol nice one, champ")
                     if (roundCounter+1 < outsiderGame.makeRounds2().1){
-                    roundCounter += 1;
-                    outsiderRound = outsiderRoundArray?[roundCounter]
+                        mkvc.nextPuzzle()
+                        roundCounter += 1;
+                        outsiderRound = outsiderRoundArray?[roundCounter]
                     }
                 }
             }
@@ -37,11 +40,6 @@ class SecondViewController: UIViewController {
     
     var gameTimer: Timer!
     
-    let MKVC = MapKitViewController()
-    
-    
-    
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         gameTimer = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(checkLocation), userInfo: nil, repeats: true)

@@ -18,7 +18,7 @@ class MapKitViewController: UIViewController {
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
     static var annotation = MKPointAnnotation()
-    var points : [MKPointAnnotation] = []
+    static var points : [MKPointAnnotation] = []
     let gameLogic = MapLogic()
     static var playerLocationPoint = CLLocation()
     
@@ -26,22 +26,21 @@ class MapKitViewController: UIViewController {
         super.viewDidLoad()
         checkLocationServices()
         print("OHIO GOZAIMASUUUUU")
-        //MapKitViewController.annotation.coordinate = CLLocationCoordinate2D(latitude: 37.78583400, longitude: -122.40641700)
-        //mapView.addAnnotation(MapKitViewController.annotation)
         
         let firstPoint = MKPointAnnotation()
         let secondPoint = MKPointAnnotation()
         let thirdPoint = MKPointAnnotation()
     
         firstPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
-        secondPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583401, longitude: -122.40641701)
-        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583402, longitude: -122.40641702)
+        secondPoint.coordinate = CLLocationCoordinate2D(latitude:37.78584400, longitude: -122.40641700)
+        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:37.78585400, longitude: -122.40641700)
         
-        points.append(firstPoint)
-        points.append(secondPoint)
-        points.append(thirdPoint)
+        MapKitViewController.points.append(firstPoint)
+        MapKitViewController.points.append(secondPoint)
+        MapKitViewController.points.append(thirdPoint)
         
-        MapKitViewController.annotation = points.removeFirst()
+        MapKitViewController.annotation = MapKitViewController.points.removeFirst()
+        mapView.addAnnotation(MapKitViewController.annotation)
     }
     
     static func setPlayerLocation(playerLocation : CLLocation) {
@@ -70,7 +69,13 @@ class MapKitViewController: UIViewController {
     }
     
     func nextPuzzle() {
-        MapKitViewController.annotation = points.removeFirst()
+        if(MapKitViewController.points.count > 0){
+            //mapView.removeAnnotation(MapKitViewController.annotation)
+            MapKitViewController.annotation = MapKitViewController.points.removeFirst()
+            //mapView.addAnnotation(MapKitViewController.annotation)
+        } else {
+            print("BOB, DO SOMETHING!")
+        }
     }
     
     func checkLocationAuthorization() {
@@ -99,11 +104,6 @@ class MapKitViewController: UIViewController {
         
         
     }
-    
-
-    
-
- 
     
 }
 
