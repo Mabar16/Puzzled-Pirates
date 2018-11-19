@@ -119,8 +119,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="niceisland" translatesAutoresizingMaskIntoConstraints="NO" id="Rci-T1-XV0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="niceisland" translatesAutoresizingMaskIntoConstraints="NO" id="Rci-T1-XV0">
                                 <rect key="frame" x="0.0" y="407" width="375" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="9J7-8Z-yf7"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNr-a4-Xdi">
                                 <rect key="frame" x="144.5" y="302" width="86" height="63"/>
@@ -159,15 +162,18 @@
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="G3I-s4-XX2"/>
                             <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="J9l-xe-a9K"/>
                             <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerX" secondItem="gXF-6g-L0m" secondAttribute="centerX" id="LZR-vW-aZV"/>
+                            <constraint firstItem="Rci-T1-XV0" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="NMI-It-NbP"/>
                             <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerY" secondItem="yez-ab-3PE" secondAttribute="centerY" id="UxW-Rv-tNB"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="UyT-nd-D4f"/>
                             <constraint firstItem="gXF-6g-L0m" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="btd-34-tE7"/>
                             <constraint firstAttribute="bottom" secondItem="NEd-0w-Qyq" secondAttribute="bottom" constant="-7" id="cTD-40-gbM"/>
                             <constraint firstAttribute="bottom" secondItem="q7m-bQ-WLH" secondAttribute="bottom" constant="-7" id="dDw-cx-NVN"/>
+                            <constraint firstItem="Rci-T1-XV0" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="g9w-6s-K0C"/>
                             <constraint firstItem="gXF-6g-L0m" firstAttribute="top" secondItem="Fe9-4v-3WQ" secondAttribute="top" constant="62" id="k65-WL-Wc1"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="bottom" secondItem="Fe9-4v-3WQ" secondAttribute="bottom" id="myP-dE-49e"/>
                             <constraint firstAttribute="bottom" secondItem="NEd-0w-Qyq" secondAttribute="bottom" constant="-7" id="oRU-8Q-wRl"/>
                             <constraint firstItem="gXF-6g-L0m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="ohx-xS-Wt7"/>
+                            <constraint firstItem="Rci-T1-XV0" firstAttribute="bottom" secondItem="Fe9-4v-3WQ" secondAttribute="bottom" id="olJ-eT-LkD"/>
                             <constraint firstItem="NEd-0w-Qyq" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="reY-aU-tUF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fe9-4v-3WQ"/>
