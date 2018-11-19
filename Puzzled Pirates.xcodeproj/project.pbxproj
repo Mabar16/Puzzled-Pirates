@@ -10,11 +10,12 @@
 		283957812181BC7800FDB4C0 /* OutsideLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283957802181BC7800FDB4C0 /* OutsideLogic.swift */; };
 		283957832181BD4A00FDB4C0 /* OutsiderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283957822181BD4A00FDB4C0 /* OutsiderStruct.swift */; };
 		28F46E00216F4537001FC7AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F46DFF216F4537001FC7AF /* AppDelegate.swift */; };
-		28F46E02216F4537001FC7AF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F46E01216F4537001FC7AF /* FirstViewController.swift */; };
+		28F46E02216F4537001FC7AF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F46E01216F4537001FC7AF /* MenuViewController.swift */; };
 		28F46E04216F4537001FC7AF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F46E03216F4537001FC7AF /* SecondViewController.swift */; };
 		28F46E07216F4537001FC7AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E05216F4537001FC7AF /* Main.storyboard */; };
 		28F46E09216F453B001FC7AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E08216F453B001FC7AF /* Assets.xcassets */; };
 		28F46E0C216F453B001FC7AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E0A216F453B001FC7AF /* LaunchScreen.storyboard */; };
+		E350641B21A2D2CF00B3B2B5 /* menutheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E350641A21A2D2CF00B3B2B5 /* menutheme.mp3 */; };
 		E359EC5E21788E060030AFB8 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC5D21788E060030AFB8 /* MapKitViewController.swift */; };
 		E359EC6121789DA80030AFB8 /* MapLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC6021789DA80030AFB8 /* MapLogic.swift */; };
 		E359EC632178A0470030AFB8 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC622178A0470030AFB8 /* Point.swift */; };
@@ -26,7 +27,7 @@
 		283957822181BD4A00FDB4C0 /* OutsiderStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutsiderStruct.swift; sourceTree = "<group>"; };
 		28F46DFC216F4537001FC7AF /* Puzzled Pirates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Puzzled Pirates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F46DFF216F4537001FC7AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28F46E01216F4537001FC7AF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		28F46E01216F4537001FC7AF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		28F46E03216F4537001FC7AF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		28F46E06216F4537001FC7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28F46E08216F453B001FC7AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		28F46E0D216F453B001FC7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50308FD378826148D1EB16C4 /* Pods-Puzzled Pirates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Puzzled Pirates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Puzzled Pirates/Pods-Puzzled Pirates.debug.xcconfig"; sourceTree = "<group>"; };
 		6E8AAAA6A5746899E0AD4638 /* Pods_Puzzled_Pirates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Puzzled_Pirates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E350641A21A2D2CF00B3B2B5 /* menutheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = menutheme.mp3; path = ../../../../Downloads/menutheme.mp3; sourceTree = "<group>"; };
 		E359EC5D21788E060030AFB8 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 		E359EC6021789DA80030AFB8 /* MapLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLogic.swift; sourceTree = "<group>"; };
 		E359EC622178A0470030AFB8 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
@@ -84,9 +86,10 @@
 		28F46DFE216F4537001FC7AF /* Puzzled Pirates */ = {
 			isa = PBXGroup;
 			children = (
+				E350641921A2D05A00B3B2B5 /* resources */,
 				E359EC5F21789D3B0030AFB8 /* Map Files */,
 				28F46DFF216F4537001FC7AF /* AppDelegate.swift */,
-				28F46E01216F4537001FC7AF /* FirstViewController.swift */,
+				28F46E01216F4537001FC7AF /* MenuViewController.swift */,
 				28F46E03216F4537001FC7AF /* SecondViewController.swift */,
 				28F46E05216F4537001FC7AF /* Main.storyboard */,
 				28F46E08216F453B001FC7AF /* Assets.xcassets */,
@@ -102,6 +105,14 @@
 				6E8AAAA6A5746899E0AD4638 /* Pods_Puzzled_Pirates.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E350641921A2D05A00B3B2B5 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E350641A21A2D2CF00B3B2B5 /* menutheme.mp3 */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		E359EC5F21789D3B0030AFB8 /* Map Files */ = {
@@ -176,6 +187,7 @@
 				28F46E0C216F453B001FC7AF /* LaunchScreen.storyboard in Resources */,
 				28F46E09216F453B001FC7AF /* Assets.xcassets in Resources */,
 				28F46E07216F4537001FC7AF /* Main.storyboard in Resources */,
+				E350641B21A2D2CF00B3B2B5 /* menutheme.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +230,7 @@
 				E359EC5E21788E060030AFB8 /* MapKitViewController.swift in Sources */,
 				E359EC6121789DA80030AFB8 /* MapLogic.swift in Sources */,
 				283957812181BC7800FDB4C0 /* OutsideLogic.swift in Sources */,
-				28F46E02216F4537001FC7AF /* FirstViewController.swift in Sources */,
+				28F46E02216F4537001FC7AF /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

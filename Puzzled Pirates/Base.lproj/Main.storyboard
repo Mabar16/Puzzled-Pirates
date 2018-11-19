@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tS9-Yr-uWB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tS9-Yr-uWB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -114,20 +114,13 @@
         <!--Menu-->
         <scene sceneID="yba-Wv-Giz">
             <objects>
-                <viewController id="Q8I-Qc-ThO" sceneMemberID="viewController">
+                <viewController id="Q8I-Qc-ThO" customClass="MenuViewController" customModule="Puzzled_Pirates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yez-ab-3PE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="niceisland" translatesAutoresizingMaskIntoConstraints="NO" id="Rci-T1-XV0">
-                                <rect key="frame" x="0.0" y="332" width="375" height="335"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="335" id="9aO-sD-eo8"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="Qcw-Hs-Ji9"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="gdy-bR-clK"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="nWn-iO-h1f"/>
-                                    <constraint firstAttribute="width" constant="375" id="zXe-Cf-rqg"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="niceisland" translatesAutoresizingMaskIntoConstraints="NO" id="Rci-T1-XV0">
+                                <rect key="frame" x="0.0" y="407" width="375" height="260"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNr-a4-Xdi">
                                 <rect key="frame" x="144.5" y="302" width="86" height="63"/>
@@ -152,7 +145,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzled Pirates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXF-6g-L0m">
-                                <rect key="frame" x="20.5" y="126" width="334" height="53"/>
+                                <rect key="frame" x="40" y="126" width="295" height="53"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="44"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -160,7 +153,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fe9-4v-3WQ" firstAttribute="trailing" secondItem="gXF-6g-L0m" secondAttribute="trailing" constant="20.5" id="33a-QY-Nfd"/>
+                            <constraint firstItem="Fe9-4v-3WQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gXF-6g-L0m" secondAttribute="trailing" id="33a-QY-Nfd"/>
                             <constraint firstItem="q7m-bQ-WLH" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="6hG-0P-liU"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="G3I-s4-XX2"/>
                             <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="J9l-xe-a9K"/>
@@ -173,7 +166,7 @@
                             <constraint firstItem="gXF-6g-L0m" firstAttribute="top" secondItem="Fe9-4v-3WQ" secondAttribute="top" constant="62" id="k65-WL-Wc1"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="bottom" secondItem="Fe9-4v-3WQ" secondAttribute="bottom" id="myP-dE-49e"/>
                             <constraint firstAttribute="bottom" secondItem="NEd-0w-Qyq" secondAttribute="bottom" constant="-7" id="oRU-8Q-wRl"/>
-                            <constraint firstItem="gXF-6g-L0m" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" constant="20.5" id="ohx-xS-Wt7"/>
+                            <constraint firstItem="gXF-6g-L0m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="ohx-xS-Wt7"/>
                             <constraint firstItem="NEd-0w-Qyq" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="reY-aU-tUF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fe9-4v-3WQ"/>
