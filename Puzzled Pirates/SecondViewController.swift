@@ -17,8 +17,6 @@ class SecondViewController: UIViewController {
     
     lazy var outsiderRound = outsiderRoundArray?[0]
     
-    lazy var mkvc = MapKitViewController()
-    
     @IBOutlet weak var puzzleLabel: UILabel!
     @IBOutlet var uiButtons: [UIButton]!
     
@@ -29,7 +27,7 @@ class SecondViewController: UIViewController {
                 if ((sender as UIButton).currentTitle == outsiderRound?.outsider) {
                     print("lol nice one, champ")
                     if (roundCounter+1 < outsiderGame.makeRounds2().1){
-                        mkvc.nextPuzzle()
+                        SharedValues.goToNextPuzzle(boolean: true)
                         roundCounter += 1;
                         outsiderRound = outsiderRoundArray?[roundCounter]
                     }
