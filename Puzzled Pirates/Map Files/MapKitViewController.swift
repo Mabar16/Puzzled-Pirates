@@ -26,11 +26,6 @@ class MapKitViewController: UIViewController {
         super.viewDidLoad()
         checkLocationServices()
 
-        MapKitViewController.annotation.coordinate = CLLocationCoordinate2D(latitude: 37.78583400, longitude: -122.40641700)
-        mapView.addAnnotation(MapKitViewController.annotation)
-
-        print("OHIO GOZAIMASUUUUU")
-        
         let firstPoint = MKPointAnnotation()
         let secondPoint = MKPointAnnotation()
         let thirdPoint = MKPointAnnotation()
@@ -79,11 +74,8 @@ class MapKitViewController: UIViewController {
         print(SharedValues.getSize())
         if(SharedValues.getSize() > 0){
             mapView.removeAnnotation(annotation)
-            print(annotation)
             annotation = SharedValues.popFirst()
-            print(annotation)
             mapView.addAnnotation(annotation)
-            print(annotation)
         } else {
             print("BOB, DO SOMETHING!")
         }
