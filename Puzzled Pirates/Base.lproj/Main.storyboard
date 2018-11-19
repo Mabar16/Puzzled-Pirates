@@ -127,6 +127,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
+                                    <action selector="startButton:" destination="Q8I-Qc-ThO" eventType="touchUpInside" id="od1-jN-jlO"/>
                                     <segue destination="49e-Tb-3d3" kind="show" id="rV0-Ia-5Ir"/>
                                 </connections>
                             </button>

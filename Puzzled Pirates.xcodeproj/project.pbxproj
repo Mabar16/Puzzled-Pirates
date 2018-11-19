@@ -15,7 +15,8 @@
 		28F46E07216F4537001FC7AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E05216F4537001FC7AF /* Main.storyboard */; };
 		28F46E09216F453B001FC7AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E08216F453B001FC7AF /* Assets.xcassets */; };
 		28F46E0C216F453B001FC7AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F46E0A216F453B001FC7AF /* LaunchScreen.storyboard */; };
-		E350641B21A2D2CF00B3B2B5 /* menutheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E350641A21A2D2CF00B3B2B5 /* menutheme.mp3 */; };
+		E350641E21A2E2F200B3B2B5 /* menutheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E350641C21A2E2F100B3B2B5 /* menutheme.mp3 */; };
+		E350641F21A2E2F200B3B2B5 /* button1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E350641D21A2E2F100B3B2B5 /* button1.wav */; };
 		E359EC5E21788E060030AFB8 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC5D21788E060030AFB8 /* MapKitViewController.swift */; };
 		E359EC6121789DA80030AFB8 /* MapLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC6021789DA80030AFB8 /* MapLogic.swift */; };
 		E359EC632178A0470030AFB8 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC622178A0470030AFB8 /* Point.swift */; };
@@ -35,7 +36,8 @@
 		28F46E0D216F453B001FC7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50308FD378826148D1EB16C4 /* Pods-Puzzled Pirates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Puzzled Pirates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Puzzled Pirates/Pods-Puzzled Pirates.debug.xcconfig"; sourceTree = "<group>"; };
 		6E8AAAA6A5746899E0AD4638 /* Pods_Puzzled_Pirates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Puzzled_Pirates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E350641A21A2D2CF00B3B2B5 /* menutheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = menutheme.mp3; path = ../../../../Downloads/menutheme.mp3; sourceTree = "<group>"; };
+		E350641C21A2E2F100B3B2B5 /* menutheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = menutheme.mp3; sourceTree = "<group>"; };
+		E350641D21A2E2F100B3B2B5 /* button1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button1.wav; sourceTree = "<group>"; };
 		E359EC5D21788E060030AFB8 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 		E359EC6021789DA80030AFB8 /* MapLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLogic.swift; sourceTree = "<group>"; };
 		E359EC622178A0470030AFB8 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
@@ -110,7 +112,8 @@
 		E350641921A2D05A00B3B2B5 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				E350641A21A2D2CF00B3B2B5 /* menutheme.mp3 */,
+				E350641D21A2E2F100B3B2B5 /* button1.wav */,
+				E350641C21A2E2F100B3B2B5 /* menutheme.mp3 */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -185,9 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				28F46E0C216F453B001FC7AF /* LaunchScreen.storyboard in Resources */,
+				E350641F21A2E2F200B3B2B5 /* button1.wav in Resources */,
 				28F46E09216F453B001FC7AF /* Assets.xcassets in Resources */,
 				28F46E07216F4537001FC7AF /* Main.storyboard in Resources */,
-				E350641B21A2D2CF00B3B2B5 /* menutheme.mp3 in Resources */,
+				E350641E21A2E2F200B3B2B5 /* menutheme.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

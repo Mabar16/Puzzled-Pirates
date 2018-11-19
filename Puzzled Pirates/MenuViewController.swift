@@ -12,12 +12,20 @@ import AudioKit
 class MenuViewController: UIViewController {
     
     let mixer: AKMixer
-    let menuMusic = try!AKAudioFile(readFileName: "menutheme.mp3", baseDir: .resources)
     var music: AKAudioPlayer
+    var soundEffect: AKAudioPlayer
+    
+    let menuMusic = try!AKAudioFile(readFileName: "menutheme.mp3", baseDir: .resources)
+    let buttonSound = try!AKAudioFile(readFileName: "button1.wav", baseDir: .resources)
+
     
     required init?(coder aDecoder: NSCoder) {
         self.music = try! AKAudioPlayer(file: menuMusic)
-        self.mixer = AKMixer(music)
+        self.music.volume = 0.1
+        self.soundEffect = try! AKAudioPlayer(file: buttonSound)
+        self.soundEffect.volume = 1.5
+
+        self.mixer = AKMixer(music, soundEffect)
         super.init(coder: aDecoder)
     }
 
@@ -39,5 +47,8 @@ class MenuViewController: UIViewController {
     }
 
 
+    @IBAction func startButton(_ sender: UIButton) {
+        soundEffect.start()
+    }
 }
 
