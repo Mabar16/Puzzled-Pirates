@@ -21,5 +21,8 @@ class Point {
     public func distanceFrom(otherPoint: Point) -> Double {
         return ((x-otherPoint.x)*(x-otherPoint.x)+(y-otherPoint.y)*(y-otherPoint.y)).squareRoot()
     }
+    public func notUsed() {
+        
+    }
     
 }

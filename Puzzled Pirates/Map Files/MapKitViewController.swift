@@ -25,6 +25,10 @@ class MapKitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+
+        MapKitViewController.annotation.coordinate = CLLocationCoordinate2D(latitude: 37.78583400, longitude: -122.40641700)
+        mapView.addAnnotation(MapKitViewController.annotation)
+
         print("OHIO GOZAIMASUUUUU")
         
         let firstPoint = MKPointAnnotation()
@@ -43,6 +47,7 @@ class MapKitViewController: UIViewController {
         annotation = SharedValues.popFirst()
         mapView.addAnnotation(annotation)
     }
+    
     
     static func setPlayerLocation(playerLocation : CLLocation) {
         playerLocationPoint = playerLocation
@@ -112,6 +117,7 @@ class MapKitViewController: UIViewController {
     }
     
 }
+
 
 extension MapKitViewController: CLLocationManagerDelegate {
     

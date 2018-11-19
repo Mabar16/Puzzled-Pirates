@@ -119,19 +119,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="niceisland" translatesAutoresizingMaskIntoConstraints="NO" id="Rci-T1-XV0">
+                                <rect key="frame" x="0.0" y="332" width="375" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="335" id="9aO-sD-eo8"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="Qcw-Hs-Ji9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="gdy-bR-clK"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="nWn-iO-h1f"/>
+                                    <constraint firstAttribute="width" constant="375" id="zXe-Cf-rqg"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNr-a4-Xdi">
-                                <rect key="frame" x="144.5" y="334" width="86" height="63"/>
+                                <rect key="frame" x="144.5" y="302" width="86" height="63"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="show" id="rV0-Ia-5Ir"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pirate-cartoon" translatesAutoresizingMaskIntoConstraints="NO" id="q7m-bQ-WLH">
+                                <rect key="frame" x="0.0" y="514" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="0oW-Aj-qgi"/>
+                                    <constraint firstAttribute="height" constant="160" id="BZX-ya-eXW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puzzledpiratemirror" translatesAutoresizingMaskIntoConstraints="NO" id="NEd-0w-Qyq">
+                                <rect key="frame" x="215" y="514" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="51g-Hq-Dto"/>
+                                    <constraint firstAttribute="height" constant="160" id="ydx-xW-zAt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzled Pirates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXF-6g-L0m">
+                                <rect key="frame" x="20.5" y="126" width="334" height="53"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Fe9-4v-3WQ" firstAttribute="trailing" secondItem="gXF-6g-L0m" secondAttribute="trailing" constant="20.5" id="33a-QY-Nfd"/>
+                            <constraint firstItem="q7m-bQ-WLH" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="6hG-0P-liU"/>
+                            <constraint firstItem="Rci-T1-XV0" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="G3I-s4-XX2"/>
                             <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="J9l-xe-a9K"/>
-                            <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerY" secondItem="Fe9-4v-3WQ" secondAttribute="centerY" id="ouU-aE-O3n"/>
+                            <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerX" secondItem="gXF-6g-L0m" secondAttribute="centerX" id="LZR-vW-aZV"/>
+                            <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerY" secondItem="yez-ab-3PE" secondAttribute="centerY" id="UxW-Rv-tNB"/>
+                            <constraint firstItem="Rci-T1-XV0" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="UyT-nd-D4f"/>
+                            <constraint firstItem="gXF-6g-L0m" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="btd-34-tE7"/>
+                            <constraint firstAttribute="bottom" secondItem="NEd-0w-Qyq" secondAttribute="bottom" constant="-7" id="cTD-40-gbM"/>
+                            <constraint firstAttribute="bottom" secondItem="q7m-bQ-WLH" secondAttribute="bottom" constant="-7" id="dDw-cx-NVN"/>
+                            <constraint firstItem="gXF-6g-L0m" firstAttribute="top" secondItem="Fe9-4v-3WQ" secondAttribute="top" constant="62" id="k65-WL-Wc1"/>
+                            <constraint firstItem="Rci-T1-XV0" firstAttribute="bottom" secondItem="Fe9-4v-3WQ" secondAttribute="bottom" id="myP-dE-49e"/>
+                            <constraint firstAttribute="bottom" secondItem="NEd-0w-Qyq" secondAttribute="bottom" constant="-7" id="oRU-8Q-wRl"/>
+                            <constraint firstItem="gXF-6g-L0m" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" constant="20.5" id="ohx-xS-Wt7"/>
+                            <constraint firstItem="NEd-0w-Qyq" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="reY-aU-tUF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fe9-4v-3WQ"/>
                     </view>
@@ -139,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifR-vO-YDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1110" y="0.0"/>
+            <point key="canvasLocation" x="-1111.2" y="-0.44977511244377816"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -177,7 +220,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MapIcon" width="24" height="24"/>
-        <image name="PuzzleIcon" width="24" height="24"/>
+        <image name="MapIcon" width="32" height="32"/>
+        <image name="PuzzleIcon" width="32" height="32"/>
+        <image name="niceisland" width="950" height="864"/>
+        <image name="pirate-cartoon" width="800" height="845"/>
+        <image name="puzzledpiratemirror" width="800" height="845"/>
     </resources>
 </document>
