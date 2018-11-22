@@ -21,7 +21,7 @@ class MenuViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         self.music = try! AKAudioPlayer(file: menuMusic)
-        self.music.volume = 0.1
+        self.music.volume = 0.5
         self.soundEffect = try! AKAudioPlayer(file: buttonSound)
         self.soundEffect.volume = 1.5
 
@@ -50,5 +50,24 @@ class MenuViewController: UIViewController {
     @IBAction func startButton(_ sender: UIButton) {
         soundEffect.start()
     }
+    
+    
+    @IBAction func musicToggle(_ sender: UIButton) {
+        
+        if(music.isPlaying) {
+            music.pause()
+            sender.setTitle("Music is: OFF", for: .normal)
+        } else {
+            music.start()
+            sender.setTitle("Music is: ON", for: .normal)
+        }
+        
+    }
+    
+    @IBAction func volumeSlider(_ sender: UISlider) {
+        let volume = Double(sender.value)
+        music.volume = volume
+    }
+    
 }
 

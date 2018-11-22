@@ -154,20 +154,40 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxq-Uf-GaU">
+                                <rect key="frame" x="132" y="363" width="111" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Music is: ON"/>
+                                <connections>
+                                    <action selector="musicToggle:" destination="Q8I-Qc-ThO" eventType="touchUpInside" id="qIa-Ad-l0k"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VsH-tt-PBV">
+                                <rect key="frame" x="128" y="394" width="119" height="30"/>
+                                <connections>
+                                    <action selector="volumeSlider:" destination="Q8I-Qc-ThO" eventType="valueChanged" id="PZE-Ya-QwG"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Fe9-4v-3WQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gXF-6g-L0m" secondAttribute="trailing" id="33a-QY-Nfd"/>
+                            <constraint firstItem="VsH-tt-PBV" firstAttribute="top" secondItem="Sxq-Uf-GaU" secondAttribute="bottom" constant="-5" id="5xg-T5-zPr"/>
                             <constraint firstItem="q7m-bQ-WLH" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="6hG-0P-liU"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="G3I-s4-XX2"/>
+                            <constraint firstItem="VsH-tt-PBV" firstAttribute="top" secondItem="qNr-a4-Xdi" secondAttribute="bottom" constant="29" id="GD6-g7-TEY"/>
                             <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="J9l-xe-a9K"/>
                             <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerX" secondItem="gXF-6g-L0m" secondAttribute="centerX" id="LZR-vW-aZV"/>
+                            <constraint firstItem="q7m-bQ-WLH" firstAttribute="top" secondItem="VsH-tt-PBV" secondAttribute="bottom" constant="91" id="MIZ-cH-T6k"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="NMI-It-NbP"/>
+                            <constraint firstItem="VsH-tt-PBV" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" constant="130" id="UR5-QQ-ywP"/>
                             <constraint firstItem="qNr-a4-Xdi" firstAttribute="centerY" secondItem="yez-ab-3PE" secondAttribute="centerY" id="UxW-Rv-tNB"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="UyT-nd-D4f"/>
+                            <constraint firstItem="Rci-T1-XV0" firstAttribute="top" secondItem="Sxq-Uf-GaU" secondAttribute="bottom" constant="8" symbolic="YES" id="ZFe-UG-uCz"/>
                             <constraint firstItem="gXF-6g-L0m" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="btd-34-tE7"/>
                             <constraint firstAttribute="bottom" secondItem="NEd-0w-Qyq" secondAttribute="bottom" constant="-7" id="cTD-40-gbM"/>
                             <constraint firstAttribute="bottom" secondItem="q7m-bQ-WLH" secondAttribute="bottom" constant="-7" id="dDw-cx-NVN"/>
+                            <constraint firstItem="VsH-tt-PBV" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="dsw-FT-Ome"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="leading" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="g9w-6s-K0C"/>
                             <constraint firstItem="gXF-6g-L0m" firstAttribute="top" secondItem="Fe9-4v-3WQ" secondAttribute="top" constant="62" id="k65-WL-Wc1"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="bottom" secondItem="Fe9-4v-3WQ" secondAttribute="bottom" id="myP-dE-49e"/>
@@ -175,6 +195,7 @@
                             <constraint firstItem="gXF-6g-L0m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fe9-4v-3WQ" secondAttribute="leading" id="ohx-xS-Wt7"/>
                             <constraint firstItem="Rci-T1-XV0" firstAttribute="bottom" secondItem="Fe9-4v-3WQ" secondAttribute="bottom" id="olJ-eT-LkD"/>
                             <constraint firstItem="NEd-0w-Qyq" firstAttribute="trailing" secondItem="Fe9-4v-3WQ" secondAttribute="trailing" id="reY-aU-tUF"/>
+                            <constraint firstItem="Sxq-Uf-GaU" firstAttribute="centerX" secondItem="Fe9-4v-3WQ" secondAttribute="centerX" id="rna-gU-Msp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fe9-4v-3WQ"/>
                     </view>
