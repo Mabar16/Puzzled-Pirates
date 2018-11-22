@@ -37,7 +37,7 @@ class SecondViewController: UIViewController {
                         SharedValues.goToNextPuzzle(boolean: true)
                         outsiderRound = outsiderGame.nextOutsiderRound();
                         buttonsAreShuffled = false;
-                        showPuzzle()
+                        checkLocation()
                         //tab to map
                     } else {
                         hideButtons(outsiderGame.isRoundOver())
@@ -80,14 +80,13 @@ class SecondViewController: UIViewController {
         }
     }
     
-    @objc func checkLocation() -> Bool {
+    @objc func checkLocation(){
         
-        //DispatchQueue.main.async(){}
-        playerIsAtLocation = true //MKVC.atPuzzleLocation()
+        DispatchQueue.main.async(){}
+        playerIsAtLocation = SharedValues.getIfAtLocation() //MKVC.atPuzzleLocation()
         puzzleLabel.text = labelText()
+        hideButtons(!playerIsAtLocation)
         showPuzzle()
-        return playerIsAtLocation
-        
     }
 }
 

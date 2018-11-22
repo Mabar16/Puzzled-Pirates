@@ -16,7 +16,6 @@ class SharedValues{
     static var atLocation = false
     
     static func popFirst() -> MKPointAnnotation {
-        print("HI")
         return points.removeFirst()
     }
     
