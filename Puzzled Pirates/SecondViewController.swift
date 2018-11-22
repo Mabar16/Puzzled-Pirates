@@ -76,7 +76,8 @@ class SecondViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now()){
         }
-        let atLoc = true //MKVC.atPuzzleLocation()
+        let atLoc = SharedValues.getIfAtLocation()
+        
         if (!outsiderGame.isRoundOver()){
         showPuzzle();
         }

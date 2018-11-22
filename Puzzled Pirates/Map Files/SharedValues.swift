@@ -13,6 +13,7 @@ class SharedValues{
     static var annotation = MKPointAnnotation()
     static var points : [MKPointAnnotation] = []
     static var nextPuzzle = false
+    static var atLocation = false
     
     static func popFirst() -> MKPointAnnotation {
         print("HI")
@@ -33,5 +34,13 @@ class SharedValues{
     
     static func goToNextPuzzle(boolean : Bool) {
         nextPuzzle = boolean
+    }
+    
+    static func setIfAtLocation(boolean : Bool){
+        atLocation = boolean
+    }
+    
+    static func getIfAtLocation() -> Bool{
+        return atLocation
     }
 }
