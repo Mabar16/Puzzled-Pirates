@@ -47,13 +47,6 @@ class MapKitViewController: UIViewController {
         annotation = SharedValues.popFirst()
         mapView.addAnnotation(annotation)
         
-        //let tabBarControllerItems = self.tabBarController?.tabBar.items
-        
-        //if let tabArray = tabBarControllerItems {
-        //    let tabBarItem1 = tabArray[1]
-            
-        //    tabBarItem1.isEnabled = false
-        //}
         gameTimer = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(atPuzzleLocation), userInfo: nil, repeats: true)
     }
     
@@ -95,18 +88,6 @@ class MapKitViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func checkLocationButton(_ sender: UIButton) {
-        if(atPuzzleLocation()){
-            let tabBarControllerItems = self.tabBarController?.tabBar.items
-            if let tabArray = tabBarControllerItems {
-                let tabBarItem1 = tabArray[1]
-                
-                tabBarItem1.isEnabled = true
-            }
-        }
-    }
-    
     func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
@@ -131,12 +112,6 @@ class MapKitViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if(SharedValues.getIfNextPuzzle()){
             nextPuzzle()
-        }
-        let tabBarControllerItems = self.tabBarController?.tabBar.items
-        if let tabArray = tabBarControllerItems {
-            let tabBarItem1 = tabArray[1]
-            
-            tabBarItem1.isEnabled = false
         }
     }
     
@@ -166,19 +141,19 @@ extension MapKitViewController: CLLocationManagerDelegate {
         checkLocationAuthorization()
     }
     
-    @objc func atPuzzleLocation() -> Bool {
+    @objc func atPuzzleLocation(){
         
         let converted = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-        print("called")
-        print(gameLogic.checkIfWithinThreshold(onePoint: MapKitViewController.playerLocationPoint, secondPoint: converted))
-        print("PLAYER LAT: \(MapKitViewController.playerLocationPoint.coordinate.latitude) PLAYER LONG: \(MapKitViewController.playerLocationPoint.coordinate.longitude)")
-        print("POINT LAT: \(converted.coordinate.latitude) POINT LONG: \(converted.coordinate.longitude)")
+//        print("called")
+//        print(gameLogic.checkIfWithinThreshold(onePoint: MapKitViewController.playerLocationPoint, secondPoint: converted))
+//        print("PLAYER LAT: \(MapKitViewController.playerLocationPoint.coordinate.latitude) PLAYER LONG: \(MapKitViewController.playerLocationPoint.coordinate.longitude)")
+//        print("POINT LAT: \(converted.coordinate.latitude) POINT LONG: \(converted.coordinate.longitude)")
         
         //Used for SharedValues
         SharedValues.setIfAtLocation(boolean: gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: MapKitViewController.playerLocationPoint))
         
         //Used for button
-        return gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: MapKitViewController.playerLocationPoint)
+//        return gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: MapKitViewController.playerLocationPoint)
     }
     
 }
