@@ -71,8 +71,6 @@
 		28F46DF3216F4537001FC7AF = {
 			isa = PBXGroup;
 			children = (
-				283957802181BC7800FDB4C0 /* OutsideLogic.swift */,
-				283957822181BD4A00FDB4C0 /* OutsiderStruct.swift */,
 				28F46DFE216F4537001FC7AF /* Puzzled Pirates */,
 				28F46DFD216F4537001FC7AF /* Products */,
 				030B382CDF0A7711BAAFE3B2 /* Pods */,
@@ -93,9 +91,9 @@
 			children = (
 				E350641921A2D05A00B3B2B5 /* resources */,
 				E359EC5F21789D3B0030AFB8 /* Map Files */,
+				E32ACEC721A6ADB5008D2C41 /* Puzzle Files */,
 				28F46DFF216F4537001FC7AF /* AppDelegate.swift */,
 				28F46E01216F4537001FC7AF /* MenuViewController.swift */,
-				28F46E03216F4537001FC7AF /* SecondViewController.swift */,
 				28F46E05216F4537001FC7AF /* Main.storyboard */,
 				28F46E08216F453B001FC7AF /* Assets.xcassets */,
 				28F46E0A216F453B001FC7AF /* LaunchScreen.storyboard */,
@@ -110,6 +108,16 @@
 				6E8AAAA6A5746899E0AD4638 /* Pods_Puzzled_Pirates.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E32ACEC721A6ADB5008D2C41 /* Puzzle Files */ = {
+			isa = PBXGroup;
+			children = (
+				283957822181BD4A00FDB4C0 /* OutsiderStruct.swift */,
+				283957802181BC7800FDB4C0 /* OutsideLogic.swift */,
+				28F46E03216F4537001FC7AF /* SecondViewController.swift */,
+			);
+			path = "Puzzle Files";
 			sourceTree = "<group>";
 		};
 		E350641921A2D05A00B3B2B5 /* resources */ = {
