@@ -29,10 +29,13 @@ class MapKitViewController: UIViewController {
         let firstPoint = MKPointAnnotation()
         let secondPoint = MKPointAnnotation()
         let thirdPoint = MKPointAnnotation()
-    
-        firstPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
-        secondPoint.coordinate = CLLocationCoordinate2D(latitude:37.79583400, longitude: -122.40641700)
-        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
+        //SDU Locations
+        //55.367379,10.430793
+        //55.367277,10.429900
+        //55.367527,10.428386
+        firstPoint.coordinate = CLLocationCoordinate2D(latitude:55.367379, longitude: 10.430793)
+        secondPoint.coordinate = CLLocationCoordinate2D(latitude:55.367277, longitude: 10.429900)
+        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:55.367527, longitude: 10.428386)
         
         SharedValues.addPoint(point: firstPoint)
         SharedValues.addPoint(point: secondPoint)
@@ -41,6 +44,16 @@ class MapKitViewController: UIViewController {
         
         annotation = SharedValues.popFirst()
         mapView.addAnnotation(annotation)
+        
+        let tabBarControllerItems = self.tabBarController?.tabBar.items
+        
+        if let tabArray = tabBarControllerItems {
+            let tabBarItem1 = tabArray[1]
+            //tabBarItem2 = tabArray[1]
+            
+            tabBarItem1.isEnabled = false
+            //tabBarItem2.isEnabled = false
+        }
     }
     
     
