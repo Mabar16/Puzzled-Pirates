@@ -12,8 +12,8 @@ class SecondViewController: UIViewController {
 
     let outsiderGame = OutsiderLogic()
     lazy var roundCounter: Int = outsiderGame.roundCounter
-    
     lazy var outsiderRound = outsiderGame.nextOutsiderRound()
+    var playerIsAtLocation: Bool = false;
     
     @IBOutlet weak var puzzleLabel: UILabel!
     @IBOutlet var uiButtons: [UIButton]!
@@ -23,6 +23,8 @@ class SecondViewController: UIViewController {
             button.isHidden = hide
         }
     }
+    
+    
     
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -34,7 +36,9 @@ class SecondViewController: UIViewController {
                     if (!outsiderGame.isRoundOver()){
                         SharedValues.goToNextPuzzle(boolean: true)
                         outsiderRound = outsiderGame.nextOutsiderRound();
+                        buttonsAreShuffled = false;
                         showPuzzle()
+                        //tab to map
                     } else {
                         hideButtons(outsiderGame.isRoundOver())
                         puzzleLabel.text = "You found the treasure!"
@@ -48,24 +52,28 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showPuzzle();
         gameTimer = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(checkLocation), userInfo: nil, repeats: true)
     }
     
+    lazy var buttonsAreShuffled: Bool = false;
     
     func showPuzzle() {
+        if (!buttonsAreShuffled){
         var list = outsiderRound.matchingWords;
         list.append(outsiderRound.outsider);
         list.shuffle();
-        print(list)
+        buttonsAreShuffled = true
         for (index, element) in uiButtons.enumerated() {
             if (index < 4){
                 element.setTitle(list[index], for: UIControl.State.normal)
             }
         }
+        }
     }
     
     func labelText() -> String {
-        if checkLocation() {
+        if (playerIsAtLocation) {
             return outsiderGame.gameTitle()
         } else {
             return "Please find the right location"
@@ -74,13 +82,11 @@ class SecondViewController: UIViewController {
     
     @objc func checkLocation() -> Bool {
         
-        DispatchQueue.main.asyncAfter(deadline: .now()){
-        }
-        let atLoc = true //MKVC.atPuzzleLocation()
-        if (!outsiderGame.isRoundOver()){
-        showPuzzle();
-        }
-        return atLoc;
+        //DispatchQueue.main.async(){}
+        playerIsAtLocation = true //MKVC.atPuzzleLocation()
+        puzzleLabel.text = labelText()
+        showPuzzle()
+        return playerIsAtLocation
         
     }
 }
