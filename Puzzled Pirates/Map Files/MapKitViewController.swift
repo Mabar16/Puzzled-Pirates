@@ -81,6 +81,10 @@ class MapKitViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func checkLocationButton(_ sender: UIButton) {
+    }
+    
     func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
