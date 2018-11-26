@@ -96,14 +96,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="treasure_chest" translatesAutoresizingMaskIntoConstraints="NO" id="Fi3-2l-Vje">
+                                <rect key="frame" x="-55.5" y="393" width="486" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fi3-2l-Vje" secondAttribute="height" multiplier="15:8" id="Xu8-NV-5VQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EP1-zB-89l" firstAttribute="centerY" secondItem="O1u-W8-tvY" secondAttribute="centerY" id="Gzp-LU-EXX"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="ouZ-zT-p5T" secondAttribute="trailing" id="IUC-WD-3Bv"/>
+                            <constraint firstItem="Fi3-2l-Vje" firstAttribute="firstBaseline" secondItem="EP1-zB-89l" secondAttribute="baseline" priority="999" constant="11.5" symbolType="layoutAnchor" id="TuP-gJ-5aY"/>
                             <constraint firstItem="ouZ-zT-p5T" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="59" id="UzG-Vm-f0i"/>
                             <constraint firstItem="ouZ-zT-p5T" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="nZq-s5-Wke"/>
                             <constraint firstItem="EP1-zB-89l" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="qbu-hX-XI7"/>
+                            <constraint firstItem="Fi3-2l-Vje" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="qsK-sp-OuC"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="ouZ-zT-p5T" secondAttribute="bottom" constant="459" id="vxn-QY-ZhH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
@@ -111,6 +119,7 @@
                     <tabBarItem key="tabBarItem" title="Puzzle" image="PuzzleIcon" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="puzzleLabel" destination="ouZ-zT-p5T" id="gsL-8W-FAe"/>
+                        <outlet property="treasureImage" destination="Fi3-2l-Vje" id="p1I-6T-hk7"/>
                         <outletCollection property="uiButtons" destination="DdH-dP-hc1" collectionClass="NSMutableArray" id="XKw-hn-RL3"/>
                         <outletCollection property="uiButtons" destination="Gcb-Zo-4DU" collectionClass="NSMutableArray" id="MBg-gJ-D9m"/>
                         <outletCollection property="uiButtons" destination="X4q-mF-81k" collectionClass="NSMutableArray" id="LlM-Eh-jcW"/>
@@ -254,5 +263,6 @@
         <image name="niceisland" width="950" height="864"/>
         <image name="pirate-cartoon" width="800" height="845"/>
         <image name="puzzledpiratemirror" width="800" height="845"/>
+        <image name="treasure_chest" width="352" height="259"/>
     </resources>
 </document>

@@ -17,6 +17,8 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var puzzleLabel: UILabel!
     @IBOutlet var uiButtons: [UIButton]!
+    @IBOutlet weak var treasureImage: UIImageView!
+    
     
     func hideButtons(_ hide: Bool) {
         if(!outsiderGame.isRoundOver()){
@@ -50,12 +52,13 @@ class SecondViewController: UIViewController {
                         buttonsAreShuffled = false;
                         //checkLocation()
                         hideButtons(true)
-                        //tab to map
-                        tabBarController?.selectedIndex = 0
                     } else {
                         hideButtons(outsiderGame.isRoundOver())
+                        treasureImage.isHidden = false
                         puzzleLabel.text = "You found the treasure!"
                     }
+                    //tab to map
+                    tabBarController?.selectedIndex = 0
                 }
             }
     }
