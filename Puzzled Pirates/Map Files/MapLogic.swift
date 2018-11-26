@@ -9,11 +9,7 @@
 import Foundation
 import MapKit
 
-
 class MapLogic {
-    
-    var point = MKMapPoint(x: 1.0, y: 1.0)
-    let list = [MKMapPoint]()
     
     let THRESHOLD_IN_METERS = 15.0
     
@@ -24,5 +20,56 @@ class MapLogic {
         return false
     }
     
+    //SDU Locations
+    //55.367379,10.430793
+    //55.367277,10.429900
+    //55.367527,10.428386
+    func sdu() {
+        let firstPoint = MKPointAnnotation()
+        let secondPoint = MKPointAnnotation()
+        let thirdPoint = MKPointAnnotation()
+        firstPoint.coordinate = CLLocationCoordinate2D(latitude:55.367379, longitude: 10.430793)
+        secondPoint.coordinate = CLLocationCoordinate2D(latitude:55.367379, longitude: 10.430793)
+        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:55.367379, longitude: 10.430793)
+        SharedValues.addPoint(point: firstPoint)
+        SharedValues.addPoint(point: secondPoint)
+        SharedValues.addPoint(point: thirdPoint)
+    }
+    
+    func sduDifferent() {
+        let firstPoint = MKPointAnnotation()
+        let secondPoint = MKPointAnnotation()
+        let thirdPoint = MKPointAnnotation()
+        firstPoint.coordinate = CLLocationCoordinate2D(latitude:55.367379, longitude: 10.430793)
+        secondPoint.coordinate = CLLocationCoordinate2D(latitude:55.367277, longitude: 10.429900)
+        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:55.367527, longitude: 10.430793)
+        SharedValues.addPoint(point: firstPoint)
+        SharedValues.addPoint(point: secondPoint)
+        SharedValues.addPoint(point: thirdPoint)
+    }
+    
+    func sanFrancisco() {
+        let firstPoint = MKPointAnnotation()
+        let secondPoint = MKPointAnnotation()
+        let thirdPoint = MKPointAnnotation()
+        firstPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
+        secondPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
+        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
+        SharedValues.addPoint(point: firstPoint)
+        SharedValues.addPoint(point: secondPoint)
+        SharedValues.addPoint(point: thirdPoint)
+    }
+    
+    func sanFranciscoDifferent() {
+        let firstPoint = MKPointAnnotation()
+        let secondPoint = MKPointAnnotation()
+        let thirdPoint = MKPointAnnotation()
+        firstPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
+        secondPoint.coordinate = CLLocationCoordinate2D(latitude:55.367277, longitude: 10.429900)
+        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:55.367527, longitude: 10.428386)
+        SharedValues.addPoint(point: firstPoint)
+        SharedValues.addPoint(point: secondPoint)
+        SharedValues.addPoint(point: thirdPoint)
+    }
     
 }

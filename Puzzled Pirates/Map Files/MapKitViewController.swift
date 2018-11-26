@@ -20,29 +20,18 @@ class MapKitViewController: UIViewController {
     var annotation = MKPointAnnotation()
     var points : [MKPointAnnotation] = []
     let gameLogic = MapLogic()
-    static var playerLocationPoint = CLLocation()
+    var playerLocationPoint = CLLocation()
     var gameTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
 
-        let firstPoint = MKPointAnnotation()
-        let secondPoint = MKPointAnnotation()
-        let thirdPoint = MKPointAnnotation()
-        //SDU Locations
-        //55.367379,10.430793
-        //55.367277,10.429900
-        //55.367527,10.428386
-        firstPoint.coordinate = CLLocationCoordinate2D(latitude:37.78583400, longitude: -122.40641700)
-        //firstPoint.coordinate = CLLocationCoordinate2D(latitude:55.367379, longitude: 10.430793)
-        secondPoint.coordinate = CLLocationCoordinate2D(latitude:55.367277, longitude: 10.429900)
-        thirdPoint.coordinate = CLLocationCoordinate2D(latitude:55.367527, longitude: 10.428386)
-        
-        SharedValues.addPoint(point: firstPoint)
-        SharedValues.addPoint(point: secondPoint)
-        SharedValues.addPoint(point: thirdPoint)
-        
+        //Choose one map
+        gameLogic.sanFrancisco()
+        //gameLogic.sanFranciscoDifferent()
+        //gameLogic.sdu()
+        //gameLogic.sduDifferent()
         
         annotation = SharedValues.popFirst()
         mapView.addAnnotation(annotation)
@@ -51,7 +40,7 @@ class MapKitViewController: UIViewController {
     }
     
     
-    static func setPlayerLocation(playerLocation : CLLocation) {
+    func setPlayerLocation(playerLocation : CLLocation) {
         playerLocationPoint = playerLocation
     }
     
@@ -130,9 +119,9 @@ extension MapKitViewController: CLLocationManagerDelegate {
         print("POINT LONGTITUDE: \(annotation.coordinate.longitude)")
         let converted = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
         let convertedTwo = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        print("BIG DICK DISTANCE?: \(location.distance(from: converted))")
+        print("DISTANCE?: \(location.distance(from: converted))")
         print(gameLogic.checkIfWithinThreshold(onePoint: convertedTwo, secondPoint: converted))
-        MapKitViewController.setPlayerLocation(playerLocation: location)
+        setPlayerLocation(playerLocation: location)
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -145,18 +134,11 @@ extension MapKitViewController: CLLocationManagerDelegate {
 
         
         //Used for SharedValues
-        SharedValues.setIfAtLocation(boolean: gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: MapKitViewController.playerLocationPoint))
+        SharedValues.setIfAtLocation(boolean: gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: playerLocationPoint))
         
         if(SharedValues.getIfNextPuzzle()){
             nextPuzzle()
         }
-        
-        //        print("called")
-        //        print(gameLogic.checkIfWithinThreshold(onePoint: MapKitViewController.playerLocationPoint, secondPoint: converted))
-        //        print("PLAYER LAT: \(MapKitViewController.playerLocationPoint.coordinate.latitude) PLAYER LONG: \(MapKitViewController.playerLocationPoint.coordinate.longitude)")
-        //        print("POINT LAT: \(converted.coordinate.latitude) POINT LONG: \(converted.coordinate.longitude)")
-        //Used for button
-//        return gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: MapKitViewController.playerLocationPoint)
     }
     
 }

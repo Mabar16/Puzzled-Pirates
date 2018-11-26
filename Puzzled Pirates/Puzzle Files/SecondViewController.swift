@@ -19,13 +19,19 @@ class SecondViewController: UIViewController {
     @IBOutlet var uiButtons: [UIButton]!
     
     func hideButtons(_ hide: Bool) {
-        for button in uiButtons{
-            button.isHidden = hide
-        }
-        if (!hide) {
-            puzzleLabel.text = outsiderGame.gameTitle()
+        if(!outsiderGame.isRoundOver()){
+            for button in uiButtons{
+                button.isHidden = hide
+            }
+            if (!hide) {
+                puzzleLabel.text = outsiderGame.gameTitle()
+            } else {
+                puzzleLabel.text = "Please find the right location"
+            }
         } else {
-            puzzleLabel.text = "Please find the right location"
+            for button in uiButtons{
+                button.isHidden = true
+            }
         }
     }
     
@@ -36,7 +42,7 @@ class SecondViewController: UIViewController {
             if !(sender as AnyObject).isHidden {
                 print("pressed")
                 if ((sender as UIButton).currentTitle == outsiderRound.outsider) {
-                    print("lol nice one, champ")
+                    print("nice one, champ")
                     roundCounter = outsiderGame.incrementRoundCounter();
                     if (!outsiderGame.isRoundOver()){
                         SharedValues.goToNextPuzzle(boolean: true)

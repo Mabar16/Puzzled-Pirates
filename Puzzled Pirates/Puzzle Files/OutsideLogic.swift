@@ -46,8 +46,8 @@ class OutsiderLogic
         let outsiderRound = OutsiderRound.init(outsider: "Plane", matchingWords: ["Cat", "Dog", "Bird"]);
         let outsiderRound2 = OutsiderRound.init(outsider: "Purple", matchingWords: ["Blue", "Yellow", "Red"]);
         let outsiderRound3 = OutsiderRound.init(outsider: "Human", matchingWords: ["Mosquito", "Dragonfly", "Fly"]);
-        let outsiderRound4 = OutsiderRound.init(outsider: "Cola", matchingWords: ["Ham", "Cheese", "Egg"]);
-        let outsiderRoundArray = [outsiderRound, outsiderRound2, outsiderRound3, outsiderRound4]
+        //let outsiderRound4 = OutsiderRound.init(outsider: "Cola", matchingWords: ["Ham", "Cheese", "Egg"]);
+        let outsiderRoundArray = [outsiderRound, outsiderRound2, outsiderRound3]
         
         return (outsiderRoundArray, outsiderRoundArray.count)
     }
