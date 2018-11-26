@@ -22,6 +22,11 @@ class SecondViewController: UIViewController {
         for button in uiButtons{
             button.isHidden = hide
         }
+        if (!hide) {
+            puzzleLabel.text = outsiderGame.gameTitle()
+        } else {
+            puzzleLabel.text = "Please find the right location"
+        }
     }
     
     
@@ -37,8 +42,10 @@ class SecondViewController: UIViewController {
                         SharedValues.goToNextPuzzle(boolean: true)
                         outsiderRound = outsiderGame.nextOutsiderRound();
                         buttonsAreShuffled = false;
-                        checkLocation()
+                        //checkLocation()
+                        hideButtons(true)
                         //tab to map
+                        tabBarController?.selectedIndex = 0
                     } else {
                         hideButtons(outsiderGame.isRoundOver())
                         puzzleLabel.text = "You found the treasure!"
@@ -72,21 +79,13 @@ class SecondViewController: UIViewController {
         }
     }
     
-    func labelText() -> String {
-        if (playerIsAtLocation) {
-            return outsiderGame.gameTitle()
-        } else {
-            return "Please find the right location"
-        }
-    }
-    
     @objc func checkLocation(){
-        
         DispatchQueue.main.async(){}
-        playerIsAtLocation = SharedValues.getIfAtLocation() //MKVC.atPuzzleLocation()
-        puzzleLabel.text = labelText()
+        playerIsAtLocation = SharedValues.getIfAtLocation()
         hideButtons(!playerIsAtLocation)
-        showPuzzle()
+        if(playerIsAtLocation){
+            showPuzzle()
+        }
     }
 }
 

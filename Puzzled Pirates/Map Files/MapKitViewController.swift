@@ -110,9 +110,7 @@ class MapKitViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if(SharedValues.getIfNextPuzzle()){
-            nextPuzzle()
-        }
+        
     }
     
 }
@@ -142,16 +140,21 @@ extension MapKitViewController: CLLocationManagerDelegate {
     }
     
     @objc func atPuzzleLocation(){
-        
+        DispatchQueue.main.async(){}
         let converted = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-//        print("called")
-//        print(gameLogic.checkIfWithinThreshold(onePoint: MapKitViewController.playerLocationPoint, secondPoint: converted))
-//        print("PLAYER LAT: \(MapKitViewController.playerLocationPoint.coordinate.latitude) PLAYER LONG: \(MapKitViewController.playerLocationPoint.coordinate.longitude)")
-//        print("POINT LAT: \(converted.coordinate.latitude) POINT LONG: \(converted.coordinate.longitude)")
+
         
         //Used for SharedValues
         SharedValues.setIfAtLocation(boolean: gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: MapKitViewController.playerLocationPoint))
         
+        if(SharedValues.getIfNextPuzzle()){
+            nextPuzzle()
+        }
+        
+        //        print("called")
+        //        print(gameLogic.checkIfWithinThreshold(onePoint: MapKitViewController.playerLocationPoint, secondPoint: converted))
+        //        print("PLAYER LAT: \(MapKitViewController.playerLocationPoint.coordinate.latitude) PLAYER LONG: \(MapKitViewController.playerLocationPoint.coordinate.longitude)")
+        //        print("POINT LAT: \(converted.coordinate.latitude) POINT LONG: \(converted.coordinate.longitude)")
         //Used for button
 //        return gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: MapKitViewController.playerLocationPoint)
     }
