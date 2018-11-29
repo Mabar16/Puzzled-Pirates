@@ -36,7 +36,7 @@ class MapKitViewController: UIViewController {
         annotation = SharedValues.popFirst()
         mapView.addAnnotation(annotation)
         
-        gameTimer = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(atPuzzleLocation), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval:0.5, target: self, selector: #selector(atPuzzleLocation), userInfo: nil, repeats: true)
     }
     
     
@@ -133,7 +133,6 @@ extension MapKitViewController: CLLocationManagerDelegate {
         DispatchQueue.main.async(){}
         let converted = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
 
-        //Used for SharedValues
         SharedValues.setIfAtLocation(boolean: gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: playerLocationPoint))
         
         if(SharedValues.getIfNextPuzzle()){
