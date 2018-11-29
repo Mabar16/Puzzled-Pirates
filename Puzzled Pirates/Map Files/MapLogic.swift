@@ -20,10 +20,6 @@ class MapLogic {
         return false
     }
     
-    //SDU Locations
-    //55.367379,10.430793
-    //55.367277,10.429900
-    //55.367527,10.428386
     func sdu() {
         let firstPoint = MKPointAnnotation()
         let secondPoint = MKPointAnnotation()
