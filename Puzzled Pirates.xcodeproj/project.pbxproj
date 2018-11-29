@@ -21,7 +21,6 @@
 		E350641F21A2E2F200B3B2B5 /* button1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E350641D21A2E2F100B3B2B5 /* button1.wav */; };
 		E359EC5E21788E060030AFB8 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC5D21788E060030AFB8 /* MapKitViewController.swift */; };
 		E359EC6121789DA80030AFB8 /* MapLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC6021789DA80030AFB8 /* MapLogic.swift */; };
-		E359EC632178A0470030AFB8 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359EC622178A0470030AFB8 /* Point.swift */; };
 		F6DB6D1D1694886B4A112977 /* Pods_Puzzled_Pirates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8AAAA6A5746899E0AD4638 /* Pods_Puzzled_Pirates.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		E350641D21A2E2F100B3B2B5 /* button1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button1.wav; sourceTree = "<group>"; };
 		E359EC5D21788E060030AFB8 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 		E359EC6021789DA80030AFB8 /* MapLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLogic.swift; sourceTree = "<group>"; };
-		E359EC622178A0470030AFB8 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		FC9EFD4F6DB56459F77AADF9 /* Pods-Puzzled Pirates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Puzzled Pirates.release.xcconfig"; path = "Pods/Target Support Files/Pods-Puzzled Pirates/Pods-Puzzled Pirates.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +132,6 @@
 			children = (
 				E359EC5D21788E060030AFB8 /* MapKitViewController.swift */,
 				E359EC6021789DA80030AFB8 /* MapLogic.swift */,
-				E359EC622178A0470030AFB8 /* Point.swift */,
 				DDA39EF121A2EB26003051AA /* SharedValues.swift */,
 			);
 			path = "Map Files";
@@ -242,7 +239,6 @@
 				28F46E04216F4537001FC7AF /* SecondViewController.swift in Sources */,
 				28F46E00216F4537001FC7AF /* AppDelegate.swift in Sources */,
 				DD5EA4BF21A2C6FC00BAF5B4 /* (null) in Sources */,
-				E359EC632178A0470030AFB8 /* Point.swift in Sources */,
 				DDA39EF221A2EB26003051AA /* SharedValues.swift in Sources */,
 				283957832181BD4A00FDB4C0 /* OutsiderStruct.swift in Sources */,
 				E359EC5E21788E060030AFB8 /* MapKitViewController.swift in Sources */,
@@ -396,7 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XZR478GFSB;
 				INFOPLIST_FILE = "Puzzled Pirates/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -415,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XZR478GFSB;
 				INFOPLIST_FILE = "Puzzled Pirates/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

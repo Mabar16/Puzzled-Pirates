@@ -16,7 +16,7 @@ class MapKitViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 10000
+    let regionInMeters: Double = 500
     var annotation = MKPointAnnotation()
     var points : [MKPointAnnotation] = []
     let gameLogic = MapLogic()
@@ -28,10 +28,10 @@ class MapKitViewController: UIViewController {
         checkLocationServices()
 
         //Choose one map
-        gameLogic.sanFrancisco()
+        //gameLogic.sanFrancisco()
         //gameLogic.sanFranciscoDifferent()
         //gameLogic.sdu()
-        //gameLogic.sduDifferent()
+        gameLogic.sduDifferent()
         
         annotation = SharedValues.popFirst()
         mapView.addAnnotation(annotation)
@@ -72,8 +72,6 @@ class MapKitViewController: UIViewController {
             mapView.removeAnnotation(annotation)
             annotation = SharedValues.popFirst()
             mapView.addAnnotation(annotation)
-        } else {
-            print("BOB, DO SOMETHING!")
         }
     }
     
@@ -87,10 +85,10 @@ class MapKitViewController: UIViewController {
         case .authorizedAlways:
             break
         case .denied:
-            // show instruction how fix
+            displayGPSErrorMessage(message: "You have denied gps acccess.\nPlease correct in your settings")
             break
         case .restricted:
-            // show that there's parental controls enabled
+            displayGPSErrorMessage(message: "Parental controls are enabled.\nPlease contact the owner")
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -100,6 +98,14 @@ class MapKitViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+    }
+    
+    func displayGPSErrorMessage(message: String) {
+        let alertController = UIAlertController(title: "GPS Settings Error", message:
+            message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }
@@ -112,14 +118,9 @@ extension MapKitViewController: CLLocationManagerDelegate {
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
         mapView.setRegion(region, animated: true)
-        // MARK: - printing distances
-        print("PLAYER LATITUDE: \(location.coordinate.latitude)")
-        print("PLAYER LONGTITUDE: \(location.coordinate.longitude)")
-        print("POINT LATITUDE: \(annotation.coordinate.latitude)")
-        print("POINT LONGTITUDE: \(annotation.coordinate.longitude)")
         let converted = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
         let convertedTwo = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        print("DISTANCE?: \(location.distance(from: converted))")
+        print("DISTANCE: \(location.distance(from: converted))")
         print(gameLogic.checkIfWithinThreshold(onePoint: convertedTwo, secondPoint: converted))
         setPlayerLocation(playerLocation: location)
     }
@@ -132,7 +133,6 @@ extension MapKitViewController: CLLocationManagerDelegate {
         DispatchQueue.main.async(){}
         let converted = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
 
-        
         //Used for SharedValues
         SharedValues.setIfAtLocation(boolean: gameLogic.checkIfWithinThreshold(onePoint: converted, secondPoint: playerLocationPoint))
         

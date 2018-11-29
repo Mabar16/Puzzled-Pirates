@@ -50,14 +50,13 @@ class SecondViewController: UIViewController {
                         SharedValues.goToNextPuzzle(boolean: true)
                         outsiderRound = outsiderGame.nextOutsiderRound();
                         buttonsAreShuffled = false;
-                        //checkLocation()
                         hideButtons(true)
                     } else {
                         hideButtons(outsiderGame.isRoundOver())
                         treasureImage.isHidden = false
                         puzzleLabel.text = "You found the treasure!"
                     }
-                    //tab to map
+                    // Tab to map
                     tabBarController?.selectedIndex = 0
                 }
             }

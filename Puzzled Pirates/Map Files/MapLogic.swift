@@ -11,7 +11,7 @@ import MapKit
 
 class MapLogic {
     
-    let THRESHOLD_IN_METERS = 15.0
+    let THRESHOLD_IN_METERS = 30.0
     
     public func checkIfWithinThreshold(onePoint: CLLocation, secondPoint: CLLocation)-> Bool{
         if(onePoint.distance(from: secondPoint) <= THRESHOLD_IN_METERS){
