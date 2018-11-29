@@ -36,13 +36,10 @@ class SharedValues{
     }
     
     static func setIfAtLocation(boolean : Bool){
-        print("set")
         atLocation = boolean
     }
     
     static func getIfAtLocation() -> Bool{
-        print("get")
-        print(atLocation)
         return atLocation
     }
 }
