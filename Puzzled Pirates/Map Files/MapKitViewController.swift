@@ -96,10 +96,6 @@ class MapKitViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
     func displayGPSErrorMessage(message: String) {
         let alertController = UIAlertController(title: "GPS Settings Error", message:
             message, preferredStyle: UIAlertController.Style.alert)
